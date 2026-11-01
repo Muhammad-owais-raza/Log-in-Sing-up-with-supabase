@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <h1>Signup with Supabase</h1>
+
+    <form onsubmit="createNewUser(event)">
+      <input type="text" id="email-input" placeholder="Email" />
+      <input type="password" id="password-input" placeholder="Password" />
+      <button type="submit">SignUp</button>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../scripts/signup.js"></script>
+  </body>
+</html>
