@@ -1,15 +1,33 @@
 
 const emailInput = document.querySelector("#email-input");
 const passwordInput = document.querySelector("#password-input");
+const show_error = document.querySelector("#showError");
 
 const supabase_url = "https://psnqnowucksxifaohozm.supabase.co";
 const supabase_key = "sb_publishable_U0i005ON69VmOylpp1AiPQ_q3uO1S4S";
 
-const connect = supabase.createClient(supabase_url,supabase_key);
+const connectDb = supabase.createClient(supabase_url,supabase_key);
 
 const createNewUser = async (event) => {
     event.preventDefault();
 
-    const 
+    const response = await connectDb.auth.signUp({
+        email : emailInput.value,
+        password : passwordInput.value,
+    })
     
+    // console.log("response: ", response);
+    // console.log("response: " , response.error.message);
+
+    if(response.error){
+        show_error.innerHTML = response.error.message;
+    } else {
+        show_error.innerHTML = "Your account has been created successfully!";
+
+        window.location.href = "../auth/login.html";
+    }
+
+
+    
+
 }
