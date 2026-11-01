@@ -24,7 +24,7 @@ const loginUser = async (event) => {
     } else {
         console.log("Welcome back! You have successfully logged in.");
 
-        window.location.href = "../index.html";
+        window.location.href = "../auth/welcome.html";
 
     }
 
